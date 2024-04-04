@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+ <html>
+<head>
+    <title>
+        BookStop
+    </title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href=
+"https://cdn-icons-png.flaticon.com/512/2232/2232688.png"
+          type="image/x-icon">
+</head>
+<body>
+    <header class = "heading">
+        Catalogue
+    </header>
+    <div class ="bg-img">
+      <label for="companySelect">Select a Book Series:</label>
+<select id="companySelect" onchange="displayCapital()">
+<option value="HP">Harry Potter</option>
+<option value="pj">Percy Jackson</option>
+<option value="hg">Hunger Games</option>
+</select>
+
+<div id="capital"></div>
+
+<script>
+function displayCapital() {
+var select = document.getElementById("companySelect");
+var capitalDiv = document.getElementById("capital");
+
+var selectedCompany = select.options[select.selectedIndex].text;
+
+// You can replace the capital values with the actual capital for each company
+var capitalMap = {
+"Harry Potter": "1. Harry Potter and the Sorcerer’s Stone (1997)"+"\n"+"2. Harry Potter and the Chamber of Secrets (1998)\n3. Harry Potter and the Prisoner of Azkaban (1999)\n4. Harry Potter and the Goblet of Fire (2000)\n5. Harry Potter and the Order of the Phoenix (2003)\n6. Harry Potter and the Half-Blood Prince (2005)\n7. Harry Potter and the Deathly Hallows (2007)\n8. Harry Potter and the Cursed Child (2016)",
+"Percy Jackson": "1. The Lightning Thief (2005) · 2. The Sea of Monsters (2006) · 3. The Titan's Curse (2007)",
+"Hunger Games": "1. The Hunger Games · 2. The Hunger Games: Catching Fire · 3. The Hunger Games: Mockingjay · 4. The Ballad of Songbirds and Snakes.",
+};
+
+var capital = capitalMap[selectedCompany];
+capitalDiv.textContent = "Capital: " + capital;
+}
+</script>
+    </div>
+
+</body>
+</html>
